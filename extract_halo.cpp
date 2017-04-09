@@ -86,7 +86,8 @@ int main(int argc, char** argv) {
 
                 if (ok &&
                     strcmp(d["reason"].GetString(), "Okay") == 0 &&                                 // Game ended "Okay"
-                    strcmp(d["GameDetails"]["PlaylistName"].GetString(), "Custom Game") != 0 &&     // Playlist is *not* "Custom Game"
+                    // strcmp(d["GameDetails"]["PlaylistName"].GetString(), "Custom Game") != 0 &&     // Playlist is *not* "Custom Game"
+                    strcmp(d["GameDetails"]["PlaylistName"].GetString(), "Team Slayer") == 0 &&     // Playlist is *exactly* Team Slayer
                     d["status"] == 0 &&                                                             // Game ended normally
                     strcmp(d["GameDetails"]["GameVariantName"].GetString(), "Slayer") == 0 &&       // Game Variant Name is Slayer
                     d["GameDetails"]["IsTeamGame"] == true)                                         // Detailed info is logged
